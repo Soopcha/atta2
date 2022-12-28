@@ -10,8 +10,9 @@ public class Nomber2 {
     public static void main(String[] args) {
         int[] nums = {1, 1, 1, 4, 6, 99, 1, 0, 867, 1};
         int[] num2 = new int[4];
+        int[] num1 =  {};
         solve(nums);
-        System.out.println(Arrays.toString(nums));
+        System.out.println(Arrays.toString(num1));
 
     }
 
