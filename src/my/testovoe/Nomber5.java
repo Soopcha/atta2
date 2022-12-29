@@ -11,10 +11,7 @@ public static Map<Integer, Integer> solve(List<Integer> list) { ... }     ,
 если есть необходимость, использовать дополнительные функции.
  */
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Nomber5 {
     public static void main(String[] args) {
@@ -27,12 +24,40 @@ public class Nomber5 {
         list.add(54);
         list.add(54);
         list.add(54);
+        System.out.println(list.get(1));
+
+        List<Integer> list3 = Arrays.asList(109, 109, 184, 183, 134, 111, 184);
+        Map<Integer, Integer> map = solve(list3);
+        System.out.println(map);
 
 
     }
 
     public static Map<Integer, Integer> solve(List<Integer> list) {
-        Map<Integer,Integer> map = new HashMap<>();
-
+        Map<Integer, Integer> map = new HashMap<>();
+        int maxRepeats = 0;
+        for (int i = 0; i < list.size(); i++) {
+            int kolRepeats = 0;
+            for (int j = i + 1; j < list.size(); j++) {
+                if (list.get(i).equals(list.get(j))) {
+                    ++kolRepeats;
+                }
+            }
+            if (kolRepeats > maxRepeats) {
+                maxRepeats = kolRepeats;
+            }
+        }
+        for (int i = 0; i < list.size(); i++) {
+            int kolRepeats = 0;
+            for (int j = i + 1; j < list.size(); j++) {
+                if (list.get(i).equals(list.get(j))) {  //без .equals ничео не получится тк сравнение видимо ссылок
+                    ++kolRepeats;
+                }
+            }
+            if (kolRepeats == maxRepeats){
+                map.put(list.get(i), i);
+            }
+        }
+        return map;
     }
 }
