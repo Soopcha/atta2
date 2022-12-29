@@ -17,14 +17,14 @@ public class Nomber2 {
     }
 
     public static int[] solve(int[] arr) {
-        int maxEl = arr[0];
-        int minEl = arr[0];
-        int indMaxEl = 0;
-        int indMinEl = 0;
-
         if (arr.length == 0 ){
-            return arr;
+            return arr;  //хз проблемы тут опять
         } else {
+            int maxEl = arr[0];
+            int minEl = arr[0];
+            int indMaxEl = 0;
+            int indMinEl = 0;
+
             if (arr.length == 1) {
                 //System.out.println(Arrays.toString(arr));
                 //Utils.printArr(arr);
